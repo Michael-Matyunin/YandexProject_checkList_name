@@ -19,7 +19,8 @@ def get_new_user_token():
 
 # создать набор
 def post_new_user_kit(kit_body):
-    data.headers["Authorization"] += get_new_user_token()
+    header_copy = data.headers.copy()
+    header_copy["Authorization"] += get_new_user_token()
     return requests.post(configuration.URL_SERVICE + configuration.CREATE_KIT_PATH,
                          json=kit_body,
-                         headers=data.headers)
+                         headers=header_copy)

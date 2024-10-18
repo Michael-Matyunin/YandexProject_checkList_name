@@ -56,7 +56,8 @@ def test_create_kit_russian_letter_in_name_get_success_response():
     positive_assert("Мария")
 # тест на спецсимволы
 def test_create_kit_special_symbol_in_name_get_success_response():
-    positive_assert("№%@,")
+    positive_assert('"№%@",')
+
 # тест на пробелы
 def test_create_kit_space_in_name_get_success_response():
     positive_assert(" Человек и КО ")
